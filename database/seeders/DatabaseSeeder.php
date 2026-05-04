@@ -12,11 +12,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+       User::firstOrCreate(
+            ['email' => 'abdullah@test.com'],
+            [
+                'name' => 'Abdullah',
+                'password' => Hash::make('12345'),
+            ]
+        );
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            PartSeeder::class,
+        ]);
     }
 }
