@@ -1,66 +1,76 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# PC Parts Hub – REST API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+PC Parts Hub is a RESTful backend API developed as part of the Web-Based Systems course at King Faisal University.
 
-## About Laravel
+The API was built using Laravel and MySQL to manage PC component data and provide authentication and CRUD functionality for a separate front-end client.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- User registration and login
+- Token-based authentication using Laravel Sanctum
+- Retrieve all PC parts
+- Retrieve PC parts by category
+- Retrieve individual PC parts by ID
+- Add new PC parts
+- Update existing PC parts
+- Delete PC parts
+- Protected routes for create, update, and delete operations
+- Request validation
+- JSON API responses
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies
 
-## Learning Laravel
+- Laravel
+- PHP
+- MySQL
+- Laravel Sanctum
+- REST API
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## API Endpoints
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Authentication
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/register` | Register a new user |
+| POST | `/api/login` | Log in and generate an authentication token |
+| GET | `/api/user` | Retrieve the authenticated user |
 
-## Laravel Sponsors
+### PC Parts
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/parts` | Retrieve all PC parts |
+| GET | `/api/parts/category/{category}` | Retrieve parts by category |
+| GET | `/api/parts/{id}` | Retrieve a specific part |
+| POST | `/api/parts/add` | Add a new part (authentication required) |
+| PUT | `/api/parts/{id}` | Update a part (authentication required) |
+| DELETE | `/api/parts/{id}` | Delete a part (authentication required) |
 
-### Premium Partners
+## PC Part Data
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+The API manages information such as:
 
-## Contributing
+- Name
+- Category
+- Brand
+- Price
+- Specifications
+- Stock
+- Image URL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Front-End
 
-## Code of Conduct
+A separate front-end client communicates with this API to display and manage PC parts.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The interface includes product categories, search and sorting functionality, and authenticated management features.
 
-## Security Vulnerabilities
+## Deployment
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The backend API and MySQL database were deployed and tested using Railway during development.
 
-## License
+The hosted Railway service is currently inactive.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Academic Project
+
+Developed as part of the **Web-Based Systems** course at **King Faisal University**.
